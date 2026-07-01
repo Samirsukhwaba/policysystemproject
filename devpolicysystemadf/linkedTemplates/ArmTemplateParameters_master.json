@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "devpolicysystemadf"
+		},
+		"adls_ls_accountKey": {
+			"value": ""
+		},
+		"sql_ls_password": {
+			"value": ""
+		},
+		"adls_ls_properties_typeProperties_url": {
+			"value": "https://policyststemprojectadls.dfs.core.windows.net/"
+		},
+		"sql_ls_properties_typeProperties_server": {
+			"value": "policysqlser.database.windows.net"
+		},
+		"sql_ls_properties_typeProperties_database": {
+			"value": "policyprojectdb"
+		},
+		"sql_ls_properties_typeProperties_userName": {
+			"value": "sukhwaba"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
