@@ -1,0 +1,15 @@
+{
+	"name": "devpolicysystemadf",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "uaenorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7749bf95-c053-4ff8-a15c-4d62d97475c1",
+		"tenantId": "8b25bfb6-e81c-4bc4-9b8e-edd77470bf06"
+	}
+}
