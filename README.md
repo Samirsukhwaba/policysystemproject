@@ -30,6 +30,7 @@ Azure Key Vault	|Securely store secrets and credentials"
 Azure DevOps (Git)	|Version control and CI/CD"
 Power BI | Reporting and data visualization|
 
+
 ## 1.4. Data Ingestion Using Azure Data Factory into ADLS Gen2
 |Data Source	|Source System|	Format|Load Type|Ingestion method|Landing Location|
 |--------------|--------------|----------------|----------|-----------------|-----------------|
@@ -38,6 +39,15 @@ Power BI | Reporting and data visualization|
 |Agent Data	|Azure SQL Database	|SQL Tables	|Incremental|ADF |ADLS Gen2 |
 |Policy Data	|Upstream System	|JSON | Incremental|ADF|	ADLS Gen2 |
 |Customer Information|	Upstream System	|CSV|Incremental Load(after initial full load)| ADF| ADLS Gen2 |
+### 1.4.1. ADF pipeline for the Incremental Load Ingestion of Claim Data.
+<img width="2930" height="1058" alt="image" src="https://github.com/user-attachments/assets/fbbf8099-b2bc-4c17-a2f4-87fd1b13e3e0" />
+
+### 1.4.2. ADF pipeline for the Incremental Load Ingestion of Agent Data.
+<img width="1463" height="485" alt="Screenshot 2026-07-02 at 3 24 39 pm" src="https://github.com/user-attachments/assets/56d18752-dc35-40e0-ad10-670ac77f7027" />
+
+### 1.4.3. ADF pipeline for Full Load ingestion of Branch Data.
+
+<img width="1463" height="485" alt="Screenshot 2026-07-02 at 3 25 50 pm" src="https://github.com/user-attachments/assets/83adc201-d402-4f0b-9d42-99043d022167" />
 
 ## 1.5. Bronze_Layer Delta Table Creation
 ####
