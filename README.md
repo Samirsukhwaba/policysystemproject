@@ -82,10 +82,10 @@ Raw Data → Cleaned Data → Business-Ready Data
 | Data Source | Load Type | Method |
 |------------|----------|--------|
 | Branch | Full Load | ADF Copy Activity |
-| Claim | Incremental | High Water Mark (HWM) |
-| Agent | Incremental | High Water Mark (HWM) |
-| Policy | Incremental | ADF Pipeline |
-| Customer | Incremental | After initial full load |
+| Claim | Incremental | High Water Mark (HWM), ADF Copy Activity |
+| Agent | Incremental | High Water Mark (HWM), ADF Copy Activity |
+| Policy | Incremental | Upstream |
+| Customer | Incremental | Upstream |
 
 ---
 
