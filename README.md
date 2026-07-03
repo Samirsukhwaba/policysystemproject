@@ -126,7 +126,7 @@ FROM dbo.claim;
 - Latest timestamp stored back in ADLS
   
   
-**5. Pipeline workflow**
+**5. Claim Data Pipeline**
 
 
  <img width="2930" height="1058" alt="image" src="https://github.com/user-attachments/assets/fbbf8099-b2bc-4c17-a2f4-87fd1b13e3e0" />
@@ -168,7 +168,76 @@ FROM dbo.agent;
 - Latest timestamp stored back in ADLS
   
   
-**5. Pipeline workflow**
+**5. Agent Data Pipeline**
 
 <img width="1463" height="485" alt="Screenshot 2026-07-02 at 3 24 39 pm" src="https://github.com/user-attachments/assets/56d18752-dc35-40e0-ad10-670ac77f7027" />
 
+ ## Branch Data (Full Load)
+ 
+ The Branch table is a reference dataset, so a full load approach is used.
+
+### Steps
+
+**1. Extract Data**
+
+- Copy entire dbo.branch table from Azure SQL Database.
+
+**2. Load into ADLS Gen2**
+
+- Stored in Parquet format under /branch.
+
+**3. Branch Data Pipeline**
+
+<img width="1463" height="485" alt="Screenshot 2026-07-02 at 3 25 50 pm" src="https://github.com/user-attachments/assets/83adc201-d402-4f0b-9d42-99043d022167" />
+
+## Medallion Architecture
+
+### Bronze Layer
+Raw ingestion layer.
+
+Responsibilities:
+
+* Read data from ADLS Gen2
+* Add Merge_Flag = False
+* Store data as Delta tables
+* Append mode storage
+* Move processed files to archive folder
+  
+**Example of Bronze Layer Implementation**
+
+<img width="1029" height="218" alt="Screenshot 2026-07-02 at 4 03 13 pm" src="https://github.com/user-attachments/assets/eee284b1-326d-4353-927d-3f23410d38f7" />
+
+### Silver Layer
+
+The Silver layer performs data cleaning and transformation.
+
+Responsibilities:
+
+* Remove duplicates
+* Handle missing values
+* Standardise formats and schemas
+* Apply business rules
+* Join multiple datasets (Claim, Policy, Customer, Agent, Branch)
+* Convert raw Bronze data into analytics-ready datasets
+
+Output:
+
+* Cleaned and structured Delta tables
+
+### Gold Layer
+
+The Gold layer contains business-ready datasets.
+
+* Star schema design
+* Aggregated tables
+* Used for analytics and reporting
+
+
+### Reporting
+
+* Power BI connected to Gold Layer
+* Dashboards for:
+    * Claims analysis
+    * Customer segmentation
+    * Agent performance
+    * Policy insights
