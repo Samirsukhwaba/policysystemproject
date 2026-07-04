@@ -4,6 +4,17 @@ This project demonstrates the implementation of an **end-to-end Azure Data Engin
 
 The pipeline implements both **full** and **incremental (High Water Mark)** ingestion strategies, performs data validation and cleansing in the Silver layer, and applies business transformations in the Gold layer to generate insights such as claims analysis, sales by policy type, customer segmentation, and agent performance.
 
+## Key Features
+
+- End-to-end Azure Data Engineering pipeline
+- Full and Incremental (High Water Mark) data ingestion
+- Medallion Architecture (Bronze, Silver, Gold)
+- Delta Lake and Unity Catalog implementation
+- Data cleansing, validation, and transformation
+- Incremental MERGE operations using Delta tables
+- Business-ready analytical datasets
+- Interactive Power BI dashboards
+- Version control using Azure DevOps
 ---
 
 ## Table of Contents
@@ -20,6 +31,7 @@ The pipeline implements both **full** and **incremental (High Water Mark)** inge
   - [Silver Layer](#silver-layer)
   - [Gold Layer](#gold-layer)
 - [Reporting](#reporting)
+- [Future Enhancements](#future-enhancements)
 - [Conclusion](#conclusion)
 
 ---
@@ -50,7 +62,7 @@ Raw Data → Cleaned Data → Business-Ready Data
 
 ---
 
-# Services Used
+# Technology Stack
 
 | Service | Purpose |
 |---------|--------|
@@ -551,6 +563,7 @@ VALUES (
 ---
 > **Note:** In this project, the Gold layer focuses on **claim analytics**. Business transformations were implemented to generate insights such as **claims by policy type**, **sales by policy type and month**, and **claims by policy type and claim status**. The same approach can be extended to create additional business-oriented analytical datasets as required.
 
+---
 
 # Reporting
 
@@ -571,5 +584,26 @@ The following dashboards were created to support business decision-making:
 - Agent Performance Dashboard
 - Policy Insights Dashboard
 
+## Output: Claim Analysis Dashboard
+
+
+<img width="1009" height="633" alt="image" src="https://github.com/user-attachments/assets/4741ea8b-e1a7-4f7a-be76-2a8f33a7b3c9" />
+
+---
+
+# Future Enhancements
+
+- Implement workflow orchestration with Databricks Workflows.
+- Add data quality monitoring and alerting.
+- Optimize Delta tables using partitioning and Z-Ordering.
+- Integrate additional data sources and analytical use cases.
+
+# Conclusion
+
+This project demonstrates the implementation of an end-to-end Azure Data Engineering solution for an insurance analytics use case using the **Medallion Architecture (Bronze → Silver → Gold)**. The pipeline combines Azure Data Factory, Azure Data Lake Storage Gen2, Azure Databricks, Delta Lake, Unity Catalog, Azure Key Vault, Azure DevOps, and Power BI to build a scalable and reliable data platform.
+
+The solution supports both **full** and **incremental (High Water Mark)** data ingestion, performs data cleansing and validation in the Silver layer, and applies business transformations in the Gold layer to produce analytics-ready datasets. These curated datasets enable meaningful business insights through interactive Power BI dashboards, including claims analysis, customer segmentation, agent performance, and policy insights.
+
+This project demonstrates key data engineering concepts such as data ingestion, ETL pipeline development, Delta Lake operations, incremental processing, data quality management, Medallion Architecture implementation, and end-to-end reporting. The same architecture can be extended to support additional data sources, analytical use cases, and enterprise-scale workloads, making it a strong foundation for modern cloud-based data platforms.
 
 
