@@ -1,12 +1,12 @@
-# End-to-End Data Engineering Pipeline for Insurance Company
+# End-to-End Azure Data Engineering Pipeline for Insurance Analytics.
 
-This project implements a **scalable end-to-end data engineering pipeline** for an insurance company to analyse claims data and perform customer segmentation.  
-The solution is built using **Azure Data Engineering services** and follows the **Medallion Architecture (Bronze → Silver → Gold)**.
+This project demonstrates the implementation of an **end-to-end Azure Data Engineering pipeline** for an insurance company using the **Medallion Architecture (Bronze → Silver → Gold)**. The solution ingests data from Azure SQL Database into Azure Data Lake Storage using Azure Data Factory, processes and transforms the data with Azure Databricks and Delta Lake, and produces curated analytical datasets for reporting in Power BI.
+
+The pipeline implements both **full** and **incremental (High Water Mark)** ingestion strategies, performs data validation and cleansing in the Silver layer, and applies business transformations in the Gold layer to generate insights such as claims analysis, sales by policy type, customer segmentation, and agent performance.
 
 ---
 
 ## Table of Contents
-- [Project Overview](#project-overview)
 - [Architecture](#architecture)
 - [Smart Policy Data System](#smart-policy-data-system)
 - [Services Used](#services-used)
@@ -21,17 +21,6 @@ The solution is built using **Azure Data Engineering services** and follows the 
   - [Gold Layer](#gold-layer)
 - [Reporting](#reporting)
 - [Conclusion](#conclusion)
-
----
-
-# Project Overview
-
-This project builds an **end-to-end data pipeline for an insurance company** to:
-- Analyse claims data
-- Perform customer segmentation
-- Enable business insights for decision-making
-
-The pipeline ensures **data consistency, scalability, and reliability** using Azure services.
 
 ---
 
